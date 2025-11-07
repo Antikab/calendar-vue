@@ -1,5 +1,5 @@
 <script setup>
-const props = defineProps({ dir: { type: String, default: 'left' } })
+defineProps({ dir: { type: String, default: 'left' } })
 </script>
 
 <template>
