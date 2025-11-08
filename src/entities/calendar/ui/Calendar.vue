@@ -1,11 +1,17 @@
 <script setup>
 import { ref, computed, watch } from 'vue'
-import IconArrow from './icons/IconArrow.vue'
-import { formatISODate, parseISODate, isSameDay, isToday, createMonthCells } from '@/shared/date'
+
+import IconArrow from '@shared/ui/IconArrow.vue'
+import {
+  formatISODate,
+  parseISODate,
+  isSameDay,
+  isToday,
+  createMonthCells
+} from '../lib/date-utils'
 
 const model = defineModel({ type: String, default: '' })
 const emit = defineEmits(['select'])
-
 const props = defineProps({
   locale: { type: String, default: 'ru' }
 })
@@ -88,12 +94,18 @@ watch(model, (v) => {
     <div
       class="flex justify-between items-center px-3 py-2 border-b text-sm font-medium text-gray-700"
     >
-      <button class="p-2 rounded hover:text-blue-500 transition-colors" @click="prevMonth">
-        <IconArrow dir="left" />
+      <button
+        class="p-2 rounded hover:text-blue-500 transition-colors cursor-pointer"
+        @click="prevMonth"
+      >
+        <IconArrow />
       </button>
       <div>{{ title }}</div>
-      <button class="p-2 rounded hover:text-blue-500 transition-colors" @click="nextMonth">
-        <IconArrow dir="right" />
+      <button
+        class="p-2 rounded hover:text-blue-500 transition-colors cursor-pointer"
+        @click="nextMonth"
+      >
+        <IconArrow class="rotate-180" />
       </button>
     </div>
 

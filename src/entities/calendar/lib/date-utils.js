@@ -16,7 +16,6 @@ const isSameDay = (a, b) =>
 
 const isToday = (date) => isSameDay(date, new Date())
 
-// firstDayOfWeek: 0=Sun, 1=Mon, ... 6=Sat
 const createMonthCells = (year, month, firstDayOfWeek = 1) => {
   const cells = []
   const first = new Date(year, month, 1)
