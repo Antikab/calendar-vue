@@ -1,5 +1,5 @@
 <script setup>
-import IconArrow from '@shared/ui/IconArrow.vue'
+import { IconArrow } from '@shared'
 
 const model = defineModel({
   type: String,

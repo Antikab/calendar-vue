@@ -1,9 +1,12 @@
 <script setup>
-import CalendarWidget from '@widgets/calendar-widget/ui/CalendarWidget.vue'
-import ToasterProvider from '@app/providers/ToasterProvider.vue'
+import { Toaster } from 'vue-sonner'
+
+import { CalendarWidget } from '@widgets/calendar-widget'
 </script>
 
 <template>
-  <CalendarWidget />
-  <ToasterProvider />
+  <main class="min-h-screen flex flex-col items-center justify-center bg-gray-50">
+    <Toaster position="top-right" richColors />
+    <CalendarWidget />
+  </main>
 </template>
